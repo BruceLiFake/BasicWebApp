@@ -50,6 +50,7 @@ public class QueryProcessor {
         }
         else if (query.contains("square")) {
 
+            return "";
         }
         else {
             return "";
