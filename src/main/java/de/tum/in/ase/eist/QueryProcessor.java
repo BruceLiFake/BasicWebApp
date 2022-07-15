@@ -31,8 +31,9 @@ public class QueryProcessor {
                 }
             }
             return String.valueOf(result);
-        } else if (query.contains("plus")) {
-            query = query.substring(query.indexOf('s'));
+        }
+        else if (query.contains("plus")) {
+            query = query.substring(query.indexOf('s') + 1);
             String[] temp =  query.split("plus");
             int result = 0;
             for (String s: temp) {
@@ -40,7 +41,14 @@ public class QueryProcessor {
                 result += Integer.parseInt(s);
             }
             return String.valueOf(result);
-        } else {
+        }
+        else if (query.contains("multiplied")) {
+            String number1 = query.substring(query.indexOf('s') + 1).trim();
+            String number2 = query.substring(query.indexOf('y') + 1).trim();
+            int result = Integer.parseInt(number1) * Integer.parseInt(number2);
+            return String.valueOf(result);
+        }
+        else {
             return "";
         }
     }
