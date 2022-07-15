@@ -43,10 +43,13 @@ public class QueryProcessor {
             return String.valueOf(result);
         }
         else if (query.contains("multiplied")) {
-            String number1 = query.substring(query.indexOf('s') + 1).trim();
+            String number1 = query.substring(query.indexOf('s') + 1, query.indexOf('m')).trim();
             String number2 = query.substring(query.indexOf('y') + 1).trim();
             int result = Integer.parseInt(number1) * Integer.parseInt(number2);
             return String.valueOf(result);
+        }
+        else if (query.contains("square")) {
+
         }
         else {
             return "";
